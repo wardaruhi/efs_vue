@@ -1,22 +1,21 @@
-
 /* eslint-disable */
 import axios from 'axios';
-const API_URL = 'https://wardaruhi.pythonanywhere.com'; /* http://groyce.pythonanywhere.com or http://localhost:8000 */
+const API_URL = 'https://wardaruhi.pythonanywhere.com/'; /* http://groyce.pythonanywhere.com/ or http://localhost:8000 */
 
 export class APIService {
   constructor() {
 
   }
 
-   getCustomer(param_pk) {
-     const url = `${API_URL}/api/customers/${param_pk}`;
-     let jwtToken = localStorage.getItem('token');
-     console.log(":::jwtToken:::::"+jwtToken);
-     const headers = {Authorization: `jwt ${jwtToken}`};
-     return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
+  getCustomer(param_pk) {
+    const url = `${API_URL}/api/customers/${param_pk}`;
+    let jwtToken = localStorage.getItem('token');
+    console.log(":::jwtToken:::::"+jwtToken);
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
   }
 
-   getCustomerList() {
+  getCustomerList() {
     const url = `${API_URL}/api/customers/`;
     let jwtToken = localStorage.getItem('token');
     console.log(":::jwtToken:::::"+jwtToken);
@@ -26,10 +25,10 @@ export class APIService {
   }
 
   addNewCustomer(customer){
-   const url = `${API_URL}/api/customers/`;
-   let jwtToken = localStorage.getItem('token');
-   const headers = {Authorization: `jwt ${jwtToken}`};
-   return axios.post(url, customer, {headers: headers});
+    const url = `${API_URL}/api/customers/`;
+    let jwtToken = localStorage.getItem('token');
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.post(url, customer, {headers: headers});
   }
 
   updateCustomer(customer){
@@ -40,30 +39,30 @@ export class APIService {
   }
 
   deleteCustomer(customer_Pk){
-     const url = `${API_URL}/api/customers/${customer_Pk}`;
-     let jwtToken = localStorage.getItem('token');
-     const headers = {Authorization: `jwt ${jwtToken}`};
-     return axios.delete(url, {headers: headers});
+    const url = `${API_URL}/api/customers/${customer_Pk}`;
+    let jwtToken = localStorage.getItem('token');
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.delete(url, {headers: headers});
   }
 
   getInvestment(param_pk) {
-     const url = `${API_URL}/api/investments/${param_pk}`;
-     let jwtToken = localStorage.getItem('token');
-     console.log(":::jwtToken:::::"+jwtToken);
-     const headers = {Authorization: `jwt ${jwtToken}`};
-     return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
+    const url = `${API_URL}/api/investments/${param_pk}`;
+    let jwtToken = localStorage.getItem('token');
+    console.log(":::jwtToken:::::"+jwtToken);
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
   }
 
-   getInvestmentList() {
-       const url = `${API_URL}/api/investments`;
-       let jwtToken = localStorage.getItem('token');
-       console.log(":::jwtToken:::::" + jwtToken);
-       const headers = {Authorization: `jwt ${jwtToken}`};
-       return axios.get(url, {headers: headers});
+  getInvestmentList() {
+    const url = `${API_URL}/api/investments`;
+    let jwtToken = localStorage.getItem('token');
+    console.log(":::jwtToken:::::" + jwtToken);
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.get(url, {headers: headers});
 
-   }
+  }
 
-   addNewInvestment(investment){
+  addNewInvestment(investment){
     const url = `${API_URL}/api/investments/`;
     let jwtToken = localStorage.getItem('token');
     const headers = {Authorization: `jwt ${jwtToken}`};
@@ -78,49 +77,50 @@ export class APIService {
   }
 
   deleteInvestment(investment_Pk){
-     const url = `${API_URL}/api/investments/${investment_Pk}`;
-     let jwtToken = localStorage.getItem('token');
-     const headers = {Authorization: `jwt ${jwtToken}`};
-     return axios.delete(url, {headers: headers});
+    const url = `${API_URL}/api/investments/${investment_Pk}`;
+    let jwtToken = localStorage.getItem('token');
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.delete(url, {headers: headers});
   }
 
-  getStock(param_pk) {
-        const url = `${API_URL}/api/stocks/${param_pk}`;
-        let jwtToken = localStorage.getItem('token');
-        console.log(":::jwtToken:::::" + jwtToken);
-        const headers = { Authorization: `jwt ${jwtToken}` };
-        return axios.get(url, { headers: { Authorization: `jwt ${jwtToken}` } });
-    }
+    getStock(param_pk) {
+    const url = `${API_URL}/api/stocks/${param_pk}`;
+    let jwtToken = localStorage.getItem('token');
+    console.log(":::jwtToken:::::"+jwtToken);
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
+  }
 
   getStockList() {
-        const url = `${API_URL}/api/stocks`;
-        let jwtToken = localStorage.getItem('token');
-        console.log(":::jwtToken:::::" + jwtToken);
-        const headers = { Authorization: `jwt ${jwtToken}` };
-        return axios.get(url, { headers: headers });
+    const url = `${API_URL}/api/stocks`;
+    let jwtToken = localStorage.getItem('token');
+    console.log(":::jwtToken:::::" + jwtToken);
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.get(url, {headers: headers});
 
-    }
+  }
 
-  addNewStock(stock) {
-        const url = `${API_URL}/api/stocks/`;
-        let jwtToken = localStorage.getItem('token');
-        const headers = { Authorization: `jwt ${jwtToken}` };
-        return axios.post(url, stock, { headers: headers });
-    }
+  addNewStock(stock){
+    const url = `${API_URL}/api/stocks/`;
+    let jwtToken = localStorage.getItem('token');
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.post(url, stock, {headers: headers});
+  }
 
-  updateStock(stock) {
-        const url = `${API_URL}/api/stocks/${stock.pk}`;
-        let jwtToken = localStorage.getItem('token');
-        const headers = { Authorization: `jwt ${jwtToken}` };
-        return axios.put(url, stock, { headers: headers });
-    }
+  updateStock(stock){
+    const url = `${API_URL}/api/stocks/${stock.pk}`;
+    let jwtToken = localStorage.getItem('token');
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.put(url, stock, {headers: headers});
+  }
 
-  deleteStock(stock_Pk) {
-        const url = `${API_URL}/api/stocks/${stock_Pk}`;
-        let jwtToken = localStorage.getItem('token');
-        const headers = { Authorization: `jwt ${jwtToken}` };
-        return axios.delete(url, { headers: headers });
-    }
+  deleteStock(stock_Pk){
+    const url = `${API_URL}/api/stocks/${stock_Pk}`;
+    let jwtToken = localStorage.getItem('token');
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.delete(url, {headers: headers});
+  }
+
 
   authenticateLogin(credentials) {
     const url = `${API_URL}/auth/`;
